@@ -10,6 +10,7 @@
 
 #include "./moodle/segdef.h"
 
-int initialize(segment** message);
+int initialize(segment** message, int* semid_dispo, int* semid_init, int* semid_res);
+int createRandomTable(long* randomTable);
 
 #endif /* functions_h */

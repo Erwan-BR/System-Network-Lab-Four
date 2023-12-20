@@ -8,7 +8,9 @@
         "fuse_opt.h": "c",
         "fuse_lowlevel.h": "c",
         "ipc.h": "c",
-        "segdef.h": "c"
+        "segdef.h": "c",
+        "shm.h": "c",
+        "unistd.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
