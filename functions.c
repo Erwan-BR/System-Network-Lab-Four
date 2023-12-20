@@ -142,7 +142,7 @@ int sendTableAndCheckEquality(segment** message, int* semid_dispo, int* semid_in
     return EXIT_SUCCESS;
 }
 
-/// @brief Implement our own version of the communication with the server. Replace lib_sem, sem_call and wait_sem.
+/// @brief Implement our own version of the communication with the server. Replace lib_sem, acq_sem and wait_sem.
 /// @param id ID of the semoperation that is performed.
 /// @param reference Reference of the structure.
 /// @param op Operation that is performed. Should be acquisition, waiting or liberation.
