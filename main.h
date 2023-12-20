@@ -3,9 +3,10 @@
 
 #include <sys/types.h>
 #include <unistd.h>
+#include <assert.h>
 
 #include "./functions.h"
 
-#define max_request 5
+#define MAX_REQUEST 50
 
 #endif /* main_h */

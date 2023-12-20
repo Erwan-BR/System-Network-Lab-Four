@@ -41,3 +41,51 @@ int createRandomTable(long* randomTable)
     }
     return EXIT_SUCCESS;
 }
+
+int sendTableAndCheckEquality(segment** message, int* semid_dispo, int* semid_init, int* semid_res, int request)
+{
+    // 1. Acquire seg_disp
+    acq_sem(*semid_dispo, seg_dispo);
+
+    // 2. Initialization of segment and acquisition of seg_init
+    segment* s_req = malloc(segsize);
+    s_req->pid = getpid();
+    s_req->req = request;
+
+    if (EXIT_FAILURE == createRandomTable(s_req->tab))
+    {
+        perror ("ERROR on createSegment: ");
+        return EXIT_FAILURE;
+    }
+
+    **message = *s_req;
+    acq_sem(*semid_init, seg_init);
+
+    // 3. Wait res_ok.
+    wait_sem(*semid_res, res_ok);
+
+    // 4. Read the result and free seg_init
+    long resultFromServer = (*message)->result;
+    lib_sem(*semid_init, seg_init);
+
+    // 5. Wait for liberation of res_ok
+    acq_sem(*semid_res, res_ok);
+    lib_sem(*semid_res, res_ok);
+
+    // 6. Free reg_dispo
+    lib_sem(*semid_dispo, seg_dispo);
+
+    // 7. Compute mean (client and server side)
+    long mean = 0;
+    for (int i = 0; i < maxval ; i++)
+    {
+        mean += s_req->tab[i];
+    }
+    mean /= maxval;
+
+    if (mean != resultFromServer)
+    {
+        return EXIT_FAILURE;
+    }
+    return EXIT_SUCCESS;
+}
