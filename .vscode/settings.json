@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "hello_llc.h": "c",
+        "functions.h": "c",
+        "stdio.h": "c",
+        "*.tcc": "c",
+        "fuse_opt.h": "c",
+        "fuse_lowlevel.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
