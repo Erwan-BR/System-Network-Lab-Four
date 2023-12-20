@@ -25,7 +25,7 @@ chmod +x ./moodle/segserv_2021
 chmod +x main.sh
 ```
 
-#### Execute the bash file
+### Launch server and client
 
 #### Launch the server in a terminal
 
