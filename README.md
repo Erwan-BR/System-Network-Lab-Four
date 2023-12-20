@@ -18,13 +18,26 @@ You have to work on a linux computer.
 git clone https://github.com/Erwan-BR/System-Network-Lab-Four.git
 ```
 
-### Authorize execution of bash file.
+### Authorize execution of bash file (client) and server :
 
 ```bash
+chmod +x ./moodle/segserv_2021
 chmod +x main.sh
 ```
 
 #### Execute the bash file
+
+#### Launch the server in a terminal
+
+From the root of the project, launch the server thanks to the following command:
+
+```bash
+./moodle/segserv_2021
+```
+
+#### Launch the client in another terminal
+
+From the root of the project, launch the client thanks to the following command:
 
 ```bash
 ./main.sh

@@ -6,7 +6,15 @@
         "stdio.h": "c",
         "*.tcc": "c",
         "fuse_opt.h": "c",
-        "fuse_lowlevel.h": "c"
+        "fuse_lowlevel.h": "c",
+        "ipc.h": "c",
+        "segdef.h": "c",
+        "shm.h": "c",
+        "unistd.h": "c",
+        "atomic": "c",
+        "types.h": "c",
+        "random": "c",
+        "limits": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
