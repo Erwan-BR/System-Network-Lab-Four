@@ -16,13 +16,16 @@ int main()
         return EXIT_FAILURE;
     }
     
+    int numberOfErrors = 0;
     for (int request = 0; MAX_REQUEST > request; request++)
     {
         if (EXIT_FAILURE == sendTableAndCheckEquality(&message, semid_dispo, semid_init, semid_res, request))
         {
             printf("Error on request number %d\n", request);
+            numberOfErrors++;
         }
     }
+    printf("Errors : %d/%d\n", numberOfErrors, MAX_REQUEST);
     // Detach memory
     shmdt(message);
 
