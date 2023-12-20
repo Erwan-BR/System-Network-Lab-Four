@@ -10,7 +10,11 @@
         "ipc.h": "c",
         "segdef.h": "c",
         "shm.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "atomic": "c",
+        "types.h": "c",
+        "random": "c",
+        "limits": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
